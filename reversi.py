@@ -81,6 +81,8 @@ DIR = [
     (-1, 1), (0, 1), (1, 1),
 ]
 
+kazu = 0
+
 def put_and_reverse(board, position, color):
   if board[position] != EMPTY:
   	return False
@@ -132,6 +134,15 @@ def game(player1, player2):
   
 def my_AI(board, color): #おチビちゃんAI
   for position in range(N*N):
+    if put_and_reverse(board, position, color):
+      return position
+  return 0
+
+
+
+nanak = [0,5,30,35,2,3,8,9,12,13,16,17,18,19,22,23,26,27,32,33,1,7,6,4,10,11,24,25,31,28,29,34,14,15,20,21]
+def nanakong(board, color):
+  for position in nanak:
     if put_and_reverse(board, position, color):
       return position
   return 0
